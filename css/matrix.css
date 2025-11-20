@@ -1,0 +1,56 @@
+@keyframes matrix-cell-pulse {
+  0%, 100% {
+    transform: scale(var(--cell-animation-scale-min, 0.15));
+    border-radius: 0;
+    opacity: 1;
+    filter: blur(0);
+  }
+  50% {
+    transform: scale(var(--cell-animation-scale-max, 2.15));
+    border-radius: 100%;
+    opacity: var(--cell-animation-opacity-max, 0.2);
+    filter: blur(var(--cell-animation-blur-max, 10px));
+  }
+}
+
+.matrix {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+.matrix__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.matrix__cell {
+  align-items: center;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  height: var(--cell-size);
+  width: var(--cell-size);
+  color: rgba(0, 0, 0, 0.0);
+  transition: color 0.15s 0s ease-out, background-color 0.15s 0s ease-out, transform 0.4s ease-out;
+
+  /* Базовая анимация пульсации */
+  animation-name: matrix-cell-pulse;
+  animation-duration: var(--cell-duration, 2.4s);
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: var(--cell-delay, 0s);
+}
+
+.matrix__cell--m-1 { background-color: var(--color-matrix-cell-m-1); }
+.matrix__cell--m-2 { background-color: var(--color-matrix-cell-m-2); }
+.matrix__cell--m-3 { background-color: var(--color-matrix-cell-m-3); }
+.matrix__cell--m-4 { background-color: var(--color-matrix-cell-m-4); }
+.matrix__cell--m-5 { background-color: var(--color-matrix-cell-m-5); }
+.matrix__cell--m-6 { background-color: var(--color-matrix-cell-m-6); }
+.matrix__cell--m-7 { background-color: var(--color-matrix-cell-m-7); }
+.matrix__cell--m-8 { background-color: var(--color-matrix-cell-m-8); }
+,matrix__cell--m-9 { background-color: var(--color-matrix-cell-m-9); }

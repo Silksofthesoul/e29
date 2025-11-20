@@ -1,0 +1,14 @@
+html {
+  font-size: 20px;
+}
+html, html * {
+  font-family: var(--ff-common);
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
